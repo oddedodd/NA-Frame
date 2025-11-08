@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Dette er en intern prototype bygget i [Next.js](https://nextjs.org) for å demonstrere rammeverket «NA Frame». Prosjektet viser hvordan redaksjonelle og kommersielle komponenter kan hentes fra et Google-regneark og presenteres i et modulbasert grensesnitt.
 
 ## Getting Started
 
@@ -14,23 +14,16 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Åpne [http://localhost:3000](http://localhost:3000) i nettleseren for å se løsningen.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Du kan starte tilpasninger ved å endre `app/page.js` eller widgetene under `src/app/widgets`. Siden oppdateres automatisk når du lagrer filene.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Hva prosjektet inneholder
 
-## Learn More
+- `TNT Carousel`-widget som henter og formaterer innhold fra Google Sheets.
+- Eksempeloppsett av komponenter som kan brukes i Namdalsavisas digitale produkter.
+- En enkel konfigurasjon for å teste ulike widgets lokalt.
 
-To learn more about Next.js, take a look at the following resources:
+## Om NA Frame
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+NA Frame er et eksperimentelt designsystem som samler gjenbrukbare byggeklosser for annonsering, sponsing og historiefortelling. Målet er å gi redaksjonen og kommersielle team et felles rammeverk som gjør det raskere å bygge nye flater med konsistent design og god ytelse.
