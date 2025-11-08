@@ -75,7 +75,8 @@ function mapRowToItem(row) {
 
   return {
     title: get("title") || get("headline"),
-    description: get("description") || get("summary") || get("body"),
+    description:
+      get("description") || get("summary") || get("text") || get("body"),
     imageUrl: get("image") || get("imageurl") || get("image_url"),
     linkUrl: get("link") || get("url") || get("cta_url"),
     linkLabel:

@@ -143,45 +143,45 @@ export default function Carousel({ items = [] }) {
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
         >
-          {slides.map((slide, index) => (
-            <article
-              key={`${slide.title ?? "slide"}-${index}`}
-              className="w-full shrink-0 px-3 py-4"
-              style={{
-                flexBasis: `${100 / visibleCount}%`,
-                maxWidth: `${100 / visibleCount}%`,
-              }}
-            >
-              {slide.imageUrl ? (
-                <img
-                  src={slide.imageUrl}
-                  alt={slide.title || "Carousel image"}
-                  className="mb-4 aspect-video w-full rounded-xl object-cover"
-                  loading={index === currentIndex ? "eager" : "lazy"}
-                />
-              ) : null}
-              <div className="flex flex-col gap-2">
-                {slide.title ? (
-                  <h2 className="text-2xl font-semibold text-zinc-900">
-                    {slide.title}
-                  </h2>
+          {slides.map((slide, index) => {
+            const Wrapper = slide.linkUrl ? "a" : "article";
+            return (
+              <Wrapper
+                key={`${slide.title ?? "slide"}-${index}`}
+                className="group w-full shrink-0 px-3 py-4"
+                style={{
+                  flexBasis: `${100 / visibleCount}%`,
+                  maxWidth: `${100 / visibleCount}%`,
+                }}
+                {...(slide.linkUrl
+                  ? {
+                      href: slide.linkUrl,
+                      target: "_blank",
+                      rel: "noopener noreferrer",
+                    }
+                  : {})}
+              >
+                {slide.imageUrl ? (
+                  <img
+                    src={slide.imageUrl}
+                    alt={slide.title || "Carousel image"}
+                    className="mb-4 aspect-video w-full rounded-xl object-cover transition duration-200 group-hover:scale-[1.01]"
+                    loading={index === currentIndex ? "eager" : "lazy"}
+                  />
                 ) : null}
-                {slide.description ? (
-                  <p className="text-base text-zinc-600">{slide.description}</p>
-                ) : null}
-                {slide.linkUrl ? (
-                  <a
-                    href={slide.linkUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-2 inline-flex w-fit items-center gap-2 rounded-full bg-black px-4 py-2 text-sm font-medium text-white transition hover:bg-zinc-800"
-                  >
-                    {slide.linkLabel || "View"}
-                  </a>
-                ) : null}
-              </div>
-            </article>
-          ))}
+                <div className="flex flex-col gap-2">
+                  {slide.title ? (
+                    <h2 className="text-2xl font-semibold text-zinc-900 transition duration-200 group-hover:text-zinc-700">
+                      {slide.title}
+                    </h2>
+                  ) : null}
+                  {slide.description ? (
+                    <p className="text-base text-zinc-600">{slide.description}</p>
+                  ) : null}
+                </div>
+              </Wrapper>
+            );
+          })}
         </div>
         <button
           type="button"
